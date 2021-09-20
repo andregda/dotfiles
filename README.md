@@ -28,6 +28,7 @@ André’s dotfiles
 
 - [ ] [Alacritty](https://alacritty.org/)
 - [ ] X with [Awesome WM](https://awesomewm.org/)
+- [x] MacOS dotfiles
 - [x] Functions && Aliases
 - [x] Wget && Curl
 - [ ] VIM with traditional vimscript
@@ -64,7 +65,7 @@ André’s dotfiles
   <a href="https://gist.github.com/ctechols/ca1035271ad134841284">
     Adapted from this commentary.
   </a>
-  (This shot was from a 2012's  ASUS, i5, with no dedicated graphs \o/)
+  (This shot was taken from a 2012's  ASUS, i5, with no dedicated graphs \o/)
 </p>
 
 
