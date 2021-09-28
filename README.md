@@ -33,6 +33,7 @@ André’s dotfiles
 - [x] Wget && Curl
 - [ ] VIM with traditional vimscript
 - [ ] Nvim with lua
+- [ ] VS Code
 - [ ] Bash
 - [x] ZSH
 - [ ] GNU Stow for symlinks
