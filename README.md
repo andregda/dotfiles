@@ -26,7 +26,7 @@ André’s dotfiles
 
 ## Features
 
-- [ ] [Alacritty](https://alacritty.org/)
+- [x] [Alacritty](https://alacritty.org/)
 - [ ] X with [Awesome WM](https://awesomewm.org/)
 - [x] MacOS dotfiles
 - [x] Functions && Aliases
