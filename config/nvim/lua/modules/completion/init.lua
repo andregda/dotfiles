@@ -22,7 +22,8 @@ function Completion.lsp()
     return {
         "neovim/nvim-lspconfig",
         requires = {
-            "kabouzeid/nvim-lspinstall",
+            -- "kabouzeid/nvim-lspinstall",
+            "williamboman/nvim-lsp-installer",
         },
         config = require("modules.completion.lsp")(),
     }

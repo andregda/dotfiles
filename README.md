@@ -32,12 +32,20 @@ André’s dotfiles
 - [x] Functions && Aliases
 - [x] Wget && Curl
 - [ ] VIM with traditional vimscript
-- [ ] Nvim with lua
+- [x] Nvim with lua
 - [ ] VS Code
 - [ ] Bash
 - [x] ZSH
 - [ ] GNU Stow for symlinks
 - [ ] Table of Contents
+
+## Neovim
+
+Modular folder structure with some awesome plugins:
+- Packer manager
+- Native LSP
+
+*TODO:* rethink keybinds, UI
 
 ## ZSH
 

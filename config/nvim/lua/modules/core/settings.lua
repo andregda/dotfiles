@@ -2,7 +2,7 @@ vim.opt.autoindent = true
 vim.opt.autoread = true
 vim.opt.backspace = "indent,eol,start"
 vim.opt.backup = true
--- vim.opt.backupdir = vim.fn.stdpath("data") .. "/backup"
+vim.opt.backupdir = vim.fn.stdpath("data") .. "/backup"
 vim.opt.bg = "dark"
 vim.opt.binary = true
 vim.opt.bomb = true
@@ -55,12 +55,12 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.startofline = false
 vim.opt.swapfile = false
-vim.opt.tabstop = 4
+vim.opt.tabstop = 2
 vim.opt.termguicolors = true
 vim.opt.title = true
 vim.opt.timeoutlen = 500
--- vim.opt.undodir = vim.fn.stdpath("data") .. "/undo"
-vim.opt.undofile = true
+vim.opt.undodir = vim.fn.stdpath("data") .. "/undo"
+vim.opt.undofile = false
 vim.opt.updatetime = 300
 vim.opt.visualbell = false
 vim.opt.wildmenu = true
@@ -71,6 +71,7 @@ vim.opt.wrap = true
 vim.opt.writebackup = true
 
 vim.g.python3_host_prog = "/usr/bin/python3"
+vim.g.python_host_prog = "/usr/bin/python2"
 
 -- local gu = require("gruvboy.utils")
 -- if gu.compile_is_exist() == false then

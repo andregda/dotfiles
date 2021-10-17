@@ -32,7 +32,7 @@ else
 
         use(completion.lsp())
         use(completion.cmp())
-        --use(completion.emmet())
+        -- use(completion.emmet())
         use(completion.autopair())
 
         use(ui.bufferline())
@@ -42,6 +42,7 @@ else
         use(ui.colorizer())
         use(ui.treesitter())
         use(ui.colorscheme())
+        -- use(ui.statusline()) -- TODO: implement statusline
         require("modules.ui.statusline")
 
         use(editor.aerial())
@@ -50,10 +51,10 @@ else
         use(editor.gist())
         use(editor.gitsigns())
         use(editor.diagnostic())
-        use(editor.header())
-        --use(editor.translator())
+        -- use(editor.header())
+        -- use(editor.translator())
         use(editor.surround())
-        --use(editor.sql())
+        -- use(editor.sql())
         use(editor.markdown())
         use(editor.easyalign())
     end)

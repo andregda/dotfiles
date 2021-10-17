@@ -148,17 +148,16 @@ _G.packer_plugins = {
   },
   ["nvim-comment"] = {
     config = { "\27LJ\1\2:\0\0\2\0\2\0\0054\0\0\0%\1\1\0>\0\2\2>\0\1\1G\0\1\0\27modules.editor.comment\frequire\0" },
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/andregda/.local/share/nvim/site/pack/packer/opt/nvim-comment"
+    loaded = true,
+    path = "/home/andregda/.local/share/nvim/site/pack/packer/start/nvim-comment"
+  },
+  ["nvim-lsp-installer"] = {
+    loaded = true,
+    path = "/home/andregda/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/andregda/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
-  },
-  ["nvim-lspinstall"] = {
-    loaded = true,
-    path = "/home/andregda/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -217,12 +216,6 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/andregda/.local/share/nvim/site/pack/packer/opt/vim-easy-align"
   },
-  ["vim-header"] = {
-    commands = { "AddMITLicense" },
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/andregda/.local/share/nvim/site/pack/packer/opt/vim-header"
-  },
   ["vim-sandwich"] = {
     keys = { { "", "sa" }, { "", "sr" }, { "", "sd" } },
     loaded = false,
@@ -244,20 +237,23 @@ time([[Defining packer_plugins]], false)
 time([[Setup for indent-blankline.nvim]], true)
 try_loadstring("\27LJ\1\0029\0\0\2\0\2\0\0054\0\0\0%\1\1\0>\0\2\2>\0\1\1G\0\1\0\26modules.ui.indentline\frequire\0", "setup", "indent-blankline.nvim")
 time([[Setup for indent-blankline.nvim]], false)
+-- Config for: nvim-comment
+time([[Config for nvim-comment]], true)
+try_loadstring("\27LJ\1\2:\0\0\2\0\2\0\0054\0\0\0%\1\1\0>\0\2\2>\0\1\1G\0\1\0\27modules.editor.comment\frequire\0", "config", "nvim-comment")
+time([[Config for nvim-comment]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Gist lua require("packer.load")({'gist-vim'}, { cmd = "Gist", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file AddMITLicense lua require("packer.load")({'vim-header'}, { cmd = "AddMITLicense", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file StartupTime lua require("packer.load")({'startuptime.vim'}, { cmd = "StartupTime", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file EasyAlign lua require("packer.load")({'vim-easy-align'}, { cmd = "EasyAlign", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Gist lua require("packer.load")({'gist-vim'}, { cmd = "Gist", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file StartupTime lua require("packer.load")({'startuptime.vim'}, { cmd = "StartupTime", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file EasyAlign lua require("packer.load")({'vim-easy-align'}, { cmd = "EasyAlign", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 
 -- Keymap lazy-loads
 time([[Defining lazy-load keymaps]], true)
-vim.cmd [[noremap <silent> sr <cmd>lua require("packer.load")({'vim-sandwich'}, { keys = "sr", prefix = "" }, _G.packer_plugins)<cr>]]
-vim.cmd [[noremap <silent> sd <cmd>lua require("packer.load")({'vim-sandwich'}, { keys = "sd", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> sa <cmd>lua require("packer.load")({'vim-sandwich'}, { keys = "sa", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> sd <cmd>lua require("packer.load")({'vim-sandwich'}, { keys = "sd", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> sr <cmd>lua require("packer.load")({'vim-sandwich'}, { keys = "sr", prefix = "" }, _G.packer_plugins)<cr>]]
 time([[Defining lazy-load keymaps]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
@@ -268,7 +264,7 @@ vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-prev
 time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufRead * ++once lua require("packer.load")({'indent-blankline.nvim', 'nvim-comment'}, { event = "BufRead *" }, _G.packer_plugins)]]
+vim.cmd [[au BufRead * ++once lua require("packer.load")({'indent-blankline.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles(1) end

@@ -40,14 +40,14 @@ function Editor.header()
     return {
         "mnabila/vim-header",
         cmd = "AddMITLicense",
-        -- config = require("modules.editor.header")(),
+        config = require("modules.editor.header")(),
     }
 end
 
 function Editor.comment()
     return {
         "terrortylor/nvim-comment",
-        --event = "BufRead",
+        -- event = "BufRead",
         config = function()
             require("modules.editor.comment")()
         end,

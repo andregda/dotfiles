@@ -43,8 +43,11 @@ local function set_keybindings()
         { "n", "<A-0>", "<CMD>BufferLast<CR>", noremap_silent },
 
         -- split window
-        { "n", "<C-A-k>", "<C-w>t<C-w>K", remap_silent },
-        { "n", "<C-A-h>", "<C-w>t<C-w>H", remap_silent },
+        { "n", "<A-k>", "<C-w>t<C-w>k", remap_silent },
+        { "n", "<A-h>", "<C-w>t<C-w>h", remap_silent },
+        -- Not working on terminal neovim
+        -- { "n", "<C-A-k>", "<C-w>t<C-w>K", remap_silent },
+        -- { "n", "<C-A-h>", "<C-w>t<C-w>H", remap_silent },
 
         -- terminal mode
         { "t", "<Esc>", "<C-\\><C-n>", noremap_silent },
@@ -141,7 +144,12 @@ local function set_keybindings()
     end
 end
 
-vim.cmd('let mapleader=" "')
+vim.cmd([[
+let mapleader=" "
+]])
+
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- prevent typo when pressing `wq` or `q`
 vim.cmd([[
@@ -150,4 +158,5 @@ cnoreabbrev <expr> Q ((getcmdtype() is# ':' && getcmdline() is# 'Q')?('q'):('Q')
 cnoreabbrev <expr> WQ ((getcmdtype() is# ':' && getcmdline() is# 'WQ')?('wq'):('WQ'))
 cnoreabbrev <expr> Wq ((getcmdtype() is# ':' && getcmdline() is# 'Wq')?('wq'):('Wq'))
 ]])
+
 set_keybindings()
