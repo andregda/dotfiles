@@ -20,9 +20,9 @@ André’s dotfiles
 	🚧  Working on symlinks with GNU Stow 🚧
 </p>
 
-**Warning:** Use this files to suit your own needs. Fork this repository, review it, and adapt it. Do not source anything before checking. Provided 'AS-IS'!
+**Warning:** Use this files to suit your own needs. Fork this repository, review it, and adapt it. *Do not source anything before checking.* Provided 'AS-IS'!
 
-**_Fell free to fork, copy and adpt it to your use_**
+**_Feel free to fork, copy and adpt it to your use_**
 
 ## Features
 
@@ -43,7 +43,10 @@ André’s dotfiles
 
 Modular folder structure with some awesome plugins:
 - Packer manager
+- cmp
 - Native LSP
+- treesitter
+- NvimTree
 
 *TODO:* rethink keybinds, UI
 
