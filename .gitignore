@@ -1,5 +1,4 @@
-# TODO: modular config Nvim
-./config/nvim/
-
 # Ignore ZSH downloaded Plugins folder
-config/zsh/plugins
+config/zsh/plugins/*
+config/zsh/.zsh_history
+config/zsh/.zcompdump

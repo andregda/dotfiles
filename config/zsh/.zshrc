@@ -1,6 +1,6 @@
 #!/bin/sh
 #export ZDOTDIR=$HOME/.config/zsh
-HISTFILE=~/.zsh_history
+HISTFILE=$ZDOTDIR/.zsh_history
 setopt appendhistory
 
 # some useful options (man zshoptions)
@@ -40,17 +40,18 @@ zsh_add_file "zsh-prompt"
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_add_plugin "hlissner/zsh-autopair"
+zsh_add_plugin "zsh-users/zsh-completions"
 # zsh_add_completion "esc/conda-zsh-completion" false
 # For more plugins: https://github.com/unixorn/awesome-zsh-plugins
 # More completions https://github.com/zsh-users/zsh-completions
 
 # Key-bindings
 bindkey -s '^o' 'ranger^M'
-bindkey -s '^f' 'zi^M'
-bindkey -s '^s' 'ncdu^M'
+# bindkey -s '^f' 'zi^M'
+# bindkey -s '^s' 'ncdu^M'
 # bindkey -s '^n' 'nvim $(fzf)^M'
 # bindkey -s '^v' 'nvim\n'
-bindkey -s '^z' 'zi^M'
+# bindkey -s '^z' 'zi^M'
 bindkey '^[[P' delete-char
 bindkey "^p" up-line-or-beginning-search # Up
 bindkey "^n" down-line-or-beginning-search # Down
@@ -63,17 +64,17 @@ bindkey -r "^d"
 # TODO update for mac
 [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
-#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-#[ ! $(ls -fA $ZDOTDIR/completion | wc -l) -eq 0 ] && fpath+="$ZDOTDIR/completion/"
-# export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ ! $(ls -fA $ZDOTDIR/completion | wc -l) -eq 0 ] && fpath+="$ZDOTDIR/completion/"
+export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
-# bindkey '^e' edit-command-line
+bindkey '^e' edit-command-line
 
 # TODO Remove these
-setxkbmap -option caps:escape
-xset r rate 210 40
+# setxkbmap -option caps:escape
+# xset r rate 210 40
 
 # Speedy keys
 xset r rate 210 40
@@ -91,5 +92,7 @@ xset r rate 210 40
 # completions for asdf to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
 # initialise completions with ZSH's compinit
-#autoload -Uz compinit && compinit
 [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]] && compinit || compinit -C
+
+# Global config for permissions on NodeJS (https://stackoverflow.com/a/55274930/234110)
+export PATH=~/.npm-global/bin:$PATH

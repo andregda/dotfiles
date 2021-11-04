@@ -24,11 +24,12 @@ else
         local editor = require("modules.editor")
 
         use({ "wbthomason/packer.nvim" })
+        use({ "lewis6991/impatient.nvim" })
 
-        use({
-            "tweekmonster/startuptime.vim",
-            cmd = "StartupTime",
-        })
+        -- use({
+            -- "tweekmonster/startuptime.vim",
+            -- cmd = "StartupTime",
+        -- })
 
         use(completion.lsp())
         use(completion.cmp())
@@ -38,19 +39,19 @@ else
         use(ui.bufferline())
         use(ui.filemanager())
         use(ui.indentline())
+        use(ui.whichkey())
         use(ui.telescope())
         use(ui.colorizer())
         use(ui.treesitter())
         use(ui.colorscheme())
-        -- use(ui.statusline()) -- TODO: implement statusline
-        require("modules.ui.statusline")
+        use(ui.statusline()) -- TODO: implement statusline
 
-        use(editor.aerial())
-        use(editor.formatter())
+        -- use(editor.aerial())
+        -- use(editor.formatter())
         use(editor.comment())
-        use(editor.gist())
+        -- use(editor.gist())
         use(editor.gitsigns())
-        use(editor.diagnostic())
+        -- use(editor.diagnostic())
         -- use(editor.header())
         -- use(editor.translator())
         use(editor.surround())

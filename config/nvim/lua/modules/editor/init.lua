@@ -4,7 +4,7 @@ function Editor.aerial()
     return {
         "stevearc/aerial.nvim",
         wants = { "nvim-lspconfig" },
-        config = require("modules.editor.aerial")(),
+        -- config = require("modules.editor.aerial")(),
     }
 end
 
@@ -13,7 +13,7 @@ function Editor.diagnostic()
         "folke/lsp-trouble.nvim",
         wants = { "nvim-web-devicons", "nvim-lspconfig" },
         requires = { "kyazdani42/nvim-web-devicons", opt = true },
-        config = require("modules.editor.diagnostic")(),
+        -- config = require("modules.editor.diagnostic")(),
     }
 end
 
@@ -23,7 +23,7 @@ function Editor.gist()
         wants = "webapi-vim",
         requires = { "mattn/webapi-vim", opt = true },
         cmd = "Gist",
-        config = require("modules.editor.gist")(),
+        -- config = require("modules.editor.gist")(),
     }
 end
 
@@ -40,7 +40,7 @@ function Editor.header()
     return {
         "mnabila/vim-header",
         cmd = "AddMITLicense",
-        config = require("modules.editor.header")(),
+        -- config = require("modules.editor.header")(),
     }
 end
 
@@ -48,16 +48,16 @@ function Editor.comment()
     return {
         "terrortylor/nvim-comment",
         -- event = "BufRead",
-        config = function()
-            require("modules.editor.comment")()
-        end,
+        config = function ()
+          require("modules.editor.comment")()
+        end
     }
 end
 
 function Editor.formatter()
     return {
         "lukas-reineke/format.nvim",
-        config = require("modules.editor.formatter")(),
+        -- config = require("modules.editor.formatter")(),
     }
 end
 

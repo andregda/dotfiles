@@ -2,7 +2,11 @@ vim.opt.autoindent = true
 vim.opt.autoread = true
 vim.opt.backspace = "indent,eol,start"
 vim.opt.backup = true
-vim.opt.backupdir = vim.fn.stdpath("data") .. "/backup"
+local backupdir = vim.fn.stdpath("data") .. "/backup"
+if vim.fn.empty(vim.fn.glob(backupdir)) > 0 then
+    os.execute("mkdir " .. backupdir)
+end
+vim.opt.backupdir = backupdir
 vim.opt.bg = "dark"
 vim.opt.binary = true
 vim.opt.bomb = true
@@ -41,8 +45,8 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.report = 2
 vim.opt.ruler = true
-vim.opt.scrolloff = 5
-vim.opt.shiftwidth = 4
+vim.opt.scrolloff = 2
+vim.opt.shiftwidth = 2
 vim.opt.shortmess = "atToOc"
 vim.opt.showcmd = false
 vim.opt.showmatch = true
@@ -50,7 +54,7 @@ vim.opt.showmode = false
 vim.opt.showtabline = 2
 vim.opt.sidescrolloff = 10
 vim.opt.smartcase = true
-vim.opt.softtabstop = 4
+vim.opt.softtabstop = 2
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.startofline = false
@@ -59,7 +63,11 @@ vim.opt.tabstop = 2
 vim.opt.termguicolors = true
 vim.opt.title = true
 vim.opt.timeoutlen = 500
-vim.opt.undodir = vim.fn.stdpath("data") .. "/undo"
+local undodir = vim.fn.stdpath("data") .. "/undo"
+if vim.fn.empty(vim.fn.glob(undodir)) > 0 then
+    os.execute("mkdir " .. undodir)
+end
+vim.opt.undodir = undodir
 vim.opt.undofile = false
 vim.opt.updatetime = 300
 vim.opt.visualbell = false
@@ -72,11 +80,5 @@ vim.opt.writebackup = true
 
 vim.g.python3_host_prog = "/usr/bin/python3"
 vim.g.python_host_prog = "/usr/bin/python2"
-
--- local gu = require("gruvboy.utils")
--- if gu.compile_is_exist() == false then
-    -- gu.compile()
--- end
--- vim.cmd("colorscheme gruvboy_compiled")
 
 -- require("utils.global").disable_distribution_plugins()

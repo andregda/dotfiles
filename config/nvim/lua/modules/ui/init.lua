@@ -23,9 +23,16 @@ function UI.filemanager()
     return {
         "kyazdani42/nvim-tree.lua",
         wants = "nvim-web-devicons",
-        requires = { "kyazdani42/nvim-web-devicons", opt = true },
+        requires = { "kyazdani42/nvim-web-devicons", opt = false },
         config = require("modules.ui.filemanager")(),
     }
+end
+
+function UI.whichkey()
+    return {
+        "folke/which-key.nvim",
+        config = require("modules.ui.whichkey")(),
+  }
 end
 
 function UI.telescope()
@@ -74,6 +81,14 @@ function UI.colorscheme()
         "kaicataldo/material.vim",
         config = require("modules.ui.schemes")(),
     }
+end
+
+function UI.statusline()
+    return {
+      "nvim-lualine/lualine.nvim",
+      requires = {'kyazdani42/nvim-web-devicons', opt = true},
+      config = require("modules.ui.lualine")(),
+  }
 end
 
 return UI
