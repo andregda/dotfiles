@@ -79,6 +79,10 @@ end
 function UI.colorscheme()
     return {
         "kaicataldo/material.vim",
+        "ayu-theme/ayu-vim",
+        "sainnhe/sonokai",
+        "arcticicestudio/nord-vim",
+        "sainnhe/everforest",
         config = require("modules.ui.schemes")(),
     }
 end

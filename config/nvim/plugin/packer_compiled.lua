@@ -69,10 +69,20 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["DAPInstall.nvim"] = {
+    loaded = true,
+    path = "/home/andregda/.local/share/nvim/site/pack/packer/start/DAPInstall.nvim",
+    url = "https://github.com/Pocco81/DAPInstall.nvim"
+  },
   LuaSnip = {
     loaded = true,
     path = "/home/andregda/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
+  },
+  ["ayu-vim"] = {
+    loaded = true,
+    path = "/home/andregda/.local/share/nvim/site/pack/packer/start/ayu-vim",
+    url = "https://github.com/ayu-theme/ayu-vim"
   },
   ["barbar.nvim"] = {
     loaded = true,
@@ -109,6 +119,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/andregda/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
+  },
+  everforest = {
+    loaded = true,
+    path = "/home/andregda/.local/share/nvim/site/pack/packer/start/everforest",
+    url = "https://github.com/sainnhe/everforest"
   },
   ["friendly-snippets"] = {
     loaded = true,
@@ -160,6 +175,11 @@ _G.packer_plugins = {
     path = "/home/andregda/.local/share/nvim/site/pack/packer/start/nlsp-settings.nvim",
     url = "https://github.com/tamago324/nlsp-settings.nvim"
   },
+  ["nord-vim"] = {
+    loaded = true,
+    path = "/home/andregda/.local/share/nvim/site/pack/packer/start/nord-vim",
+    url = "https://github.com/arcticicestudio/nord-vim"
+  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/home/andregda/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
@@ -185,6 +205,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/andregda/.local/share/nvim/site/pack/packer/start/nvim-comment",
     url = "https://github.com/terrortylor/nvim-comment"
+  },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/home/andregda/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
   },
   ["nvim-lsp-installer"] = {
     loaded = true,
@@ -240,6 +265,11 @@ _G.packer_plugins = {
     path = "/home/andregda/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
+  sonokai = {
+    loaded = true,
+    path = "/home/andregda/.local/share/nvim/site/pack/packer/start/sonokai",
+    url = "https://github.com/sainnhe/sonokai"
+  },
   ["telescope-fzy-native.nvim"] = {
     loaded = true,
     path = "/home/andregda/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim",
@@ -291,9 +321,9 @@ time([[Defining lazy-load commands]], false)
 
 -- Keymap lazy-loads
 time([[Defining lazy-load keymaps]], true)
+vim.cmd [[noremap <silent> sa <cmd>lua require("packer.load")({'vim-sandwich'}, { keys = "sa", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> sd <cmd>lua require("packer.load")({'vim-sandwich'}, { keys = "sd", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> sr <cmd>lua require("packer.load")({'vim-sandwich'}, { keys = "sr", prefix = "" }, _G.packer_plugins)<cr>]]
-vim.cmd [[noremap <silent> sa <cmd>lua require("packer.load")({'vim-sandwich'}, { keys = "sa", prefix = "" }, _G.packer_plugins)<cr>]]
 time([[Defining lazy-load keymaps]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]

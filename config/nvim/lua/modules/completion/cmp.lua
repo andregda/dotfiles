@@ -30,12 +30,13 @@ function M.config()
             { name = "path" },
             { name = "buffer" },
             { name = "luasnip" },
-            -- { name = "cmp_tabnine" },
             { name = "nvim_lua" },
-            -- { name = "calc" },
-            -- { name = "emoji" },
-            -- { name = "treesitter" },
-            -- { name = "crates" },
+            { name = "treesitter" },
+            { name = "friendly-snippets" },
+            { name = "cmp_tabnine" },
+            { name = "calc" },
+            { name = "emoji" },
+            { name = "crates" },
             --{ name = "vsnip" },
         },
 
@@ -67,18 +68,19 @@ function M.config()
 
         formatting = {
           format = require("lspkind").cmp_format({with_text = true, menu = ({
-              buffer = "[Buffer]",
-              nvim_lsp = "[LSP]",
-              path = "[PATH]",
-              luasnip = "[LuaSnip]",
-              nvim_lua = "[Lua]",
-              latex_symbols = "[Latex]",
+              buffer = "(Buffer)",
+              nvim_lsp = "(LSP)",
+              path = "(PATH)",
+              luasnip = "(LuaSnip)",
+              nvim_lua = "(Lua)",
+              latex_symbols = "(Latex)",
         })}),
       },
 
     })
 
     cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex = '' } }))
+    require("luasnip/loaders/from_vscode").lazy_load()
 end
 
 return setmetatable({}, {

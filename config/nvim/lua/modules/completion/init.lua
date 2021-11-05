@@ -53,4 +53,14 @@ function Completion.autopair()
     }
 end
 
+function Completion.DAP()
+  return {
+    "mfussenegger/nvim-dap",
+    requires = {
+      "Pocco81/DAPInstall.nvim",
+    },
+    config = require("modules.completion.DAP")(),
+  }
+end
+
 return Completion

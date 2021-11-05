@@ -35,6 +35,7 @@ else
         use(completion.cmp())
         -- use(completion.emmet())
         use(completion.autopair())
+        use(completion.DAP())
 
         use(ui.bufferline())
         use(ui.filemanager())
